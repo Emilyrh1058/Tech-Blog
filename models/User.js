@@ -2,14 +2,12 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 const bcrypt = require("bcrypt");
 
-//Set up User model
 class User extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password); 
   }
 }
 
-// create fields/columns for User model
 User.init(
   {
     id: {
@@ -25,14 +23,12 @@ User.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      // Validate if it is a valid email
       validate: { isEmail: true },
       unique: true,
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      //make sure password has to be at least 5 char
       validate: { len: [5] },
     },
   },
@@ -43,6 +39,7 @@ User.init(
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
+
       async beforeUpdate(updatedUserData) {
         updatedUserData.password = await bcrypt.hash(
           updatedUserData.password,
@@ -50,7 +47,8 @@ User.init(
         );
         return updatedUserData;
       },
-    }, 
+    },
+
     sequelize,
     timestamps: false,
     freezeTableName: true,
