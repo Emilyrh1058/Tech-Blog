@@ -20,11 +20,12 @@ router.get("/", (req, res) => {
     ],
   })
     .then((dbPostData) => {
+
       if (!dbPostData) {
         res.status(404).json({ message: "Posts not found " });
       }
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-
+      console.log(posts)
       res.render("home", { posts, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
@@ -72,7 +73,7 @@ router.get("/viewpost/:id", (req, res) => {
       // serialize the data
       const post = dbPostData.get({ plain: true });
       console.log(post);
-      const myPost = port.user_id == req.session.user_id;
+      const myPost = post.user_id == req.session.user_id;
       // pass data to template
       res.render("single-post", {
         post,
