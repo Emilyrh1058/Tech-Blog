@@ -12,8 +12,8 @@ router.get('/', (req, res) => {
         attributes: ['id', 'title', 'body'],
       },
         {
-          model: Comments,
-          as: 'comments',
+          model: Comment,
+          as: 'comment',
           attributes: ['id', 'comment_text', 'user_id'],
         },
     ],
@@ -39,7 +39,7 @@ router.get('/:id', (req, res) => {
       },
       {
         model: Comment,
-        as: 'comments',
+        as: 'comment',
         attributes: ['id', 'comment_text', 'created_at'],
       }
     ]

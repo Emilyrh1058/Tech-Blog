@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
       },
       {
         model: Comment,
-        as: "comments",
+        as: "comment",
         attributes: ["id", "comment_text", "user_id"],
       },
     ],
@@ -52,7 +52,7 @@ router.get("/viewpost/:id", (req, res) => {
       },
       {
         model: Comment,
-        as: "comments",
+        as: "comment",
         attributes: ["id", "comment_text", "user_id"],
         include: [
           {
@@ -101,7 +101,7 @@ router.get("/dashboard", (req, res) => {
       },
       {
         model: Comment,
-        as: "comments",
+        as: "comment",
         attributes: ["id", "comment_text", "user_id"],
         include: [
           {

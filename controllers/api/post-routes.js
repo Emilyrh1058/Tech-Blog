@@ -2,21 +2,22 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 
-// get all users
+// get all 
 router.get('/', (req, res) => {
   console.log('======================');
   Post.findAll({
     attributes: ['id', 'title', 'body', 'user_id'],
-    include: [
-      {
-          model: Comments,
-          as: 'comments',
-          attributes: ['id', 'comment_text', 'user_id'],
-        },
-    ],
+    // include: [
+    //   {
+    //       model: Comment,
+    //       as: 'comment',
+    //       attributes: ['id', 'comment_text', 'user_id'],
+    //     },
+    // ],
 })
   .then(dbPostData => res.json(dbPostData))
   .catch(err => {
+    console.log(dbPostData)
     console.log(err);
     res.status(500).json(err);
   });
@@ -30,8 +31,8 @@ router.get('/:id', (req, res) => {
     attributes: ['id', 'title', 'body', 'user_id'],
     include: [
       {
-          model: Comments,
-          as: 'comments',
+          model: Comment,
+          as: 'comment',
           attributes: ['id', 'comment_text', 'user_id'],
         },
     ],
@@ -50,7 +51,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   Post.create({
     title: req.body.title,
     body: req.body.body,
