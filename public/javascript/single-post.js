@@ -6,7 +6,7 @@ async function submitCommentHandler(event) {
   const comment_text = document.querySelector("#comment-text").value.trim();
 
   if (comment_text) {
-    const response = await fetch("/api/comments", {
+    const response = await fetch("/api/comment", {
       method: "POST",
       body: JSON.stringify({
         comment_text,
