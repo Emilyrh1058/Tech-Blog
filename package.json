@@ -20,6 +20,7 @@
     "express-session": "^1.17.2",
     "handlebars": "^4.7.3",
     "inquirer": "^8.0.0",
+    "mysql-db-seed": "0.0.4",
     "mysql2": "^2.2.5",
     "sequelize": "^5.22.4"
   },
@@ -31,5 +32,6 @@
   "bugs": {
     "url": "https://github.com/Emilyrh1058/Tech-Blog/issues"
   },
-  "homepage": "https://github.com/Emilyrh1058/Tech-Blog#readme"
+  "homepage": "https://github.com/Emilyrh1058/Tech-Blog#readme",
+  "keywords": []
 }
