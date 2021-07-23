@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: sans-serif;
-    margin: 0;
+  margin: 0;
 }
 
 body, html {
@@ -9,12 +9,12 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: #333;
+  color: rgb(0, 0, 0);
 }
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: #707b89;
   font-weight: bold;
   transition: color .1s;
 }
@@ -24,10 +24,10 @@ a:hover {
 }
 
 button {
-  background-color: #515551;
+  background-color: #000000;
   border: 0;
   padding: 1%;
-  color: white;
+  color: rgb(47, 72, 235);
   font-weight: bold;
   transition: background-color .1s;
   cursor: pointer;
@@ -40,7 +40,7 @@ button:hover {
 
 .link {
   text-decoration: none;
-  color: #d9ead3;
+  color: #ffffff;
   padding: 15px;
 }
 
@@ -62,7 +62,7 @@ button:hover {
   list-style-type: none;
   padding: 20px;
   margin: 0;
-  background-color: #231010;
+  background-color: #000000;
 }
 
 #navbar li {
@@ -73,12 +73,13 @@ button:hover {
 #navbar li p {
   padding-top: 0px;
   padding-bottom: 50px;
-  color: #d9ead3;
+  color: #6e6e6e;
   display: inline;
   font-size: large;
 }
 #nav-header {
   color: #231010;
+  display: flex;
   font-size: 25px;  
   font-weight: 600;  
   width: 200px;
@@ -87,6 +88,7 @@ button:hover {
   box-shadow: 6px 6px 2px 1px rgba(140, 140, 143, 0.3);
   padding: 11px;
 }
+
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -170,7 +172,7 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #d9ead3;
+  color: #ffffff;
   font-size: 100%;
   font-weight: bold;
   transition: color .1s;
@@ -217,7 +219,7 @@ main {
 }
 
 .title {
-  background-color: #231010;
+  background-color: #1d1258;
   margin: 0px;
   padding: 10px 10px 0px 50px;
   font-size: larger;
@@ -231,7 +233,7 @@ main {
 }
 
 .upvote-btn {
-  background-color: #515551;
+  background-color: #000000;
   transition: background-color .1s;
 }
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Tech Blog</title>
-    <link rel="stylesheet" href="/public/css/main.css" />
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
 
   <body>
@@ -26,23 +26,13 @@
           </li>
         {{/if}}
       </ul>
-      <h1 id="nav-header">Tech Blog</h1>
+      <h1 class="tech-blog" id="nav-header">Tech Blog</h1>
     </nav>
     <main>
       {{{body}}}
     </main>
-    {{#if loggedIn}}
-      <footer>
-        Thanks for signing in!
-      </footer>
 
-      <script src="/js/logout.js"></script>
+    <script src="/js/logout.js"></script>
 
-    {{else}}
-      <footer>
-        Thanks for visiting!
-      </footer>
-      
-    {{/if}}
   </body>
 </html>
