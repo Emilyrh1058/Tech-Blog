@@ -1,5 +1,15 @@
-function compareStrings(str1, str2) {
-  return str1.equals(str2);
-}
+module.exports = {
+  format_date: date => {
+    return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(
+      date
+    ).getFullYear()}`;
+  
+  },
+  format_plural: (word, amount) => {
+    if (amount !== 1) {
+      return `${word}s`;
+    }
 
-module.exports = compareStrings
+    return word;
+  }
+};

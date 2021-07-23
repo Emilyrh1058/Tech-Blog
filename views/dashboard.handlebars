@@ -1,5 +1,20 @@
-<h1 class="padding-20">My Posts</h1>
-<p><a class="link" href="/post">New Post</a></p>
-{{#each posts as |aPost| }}
-{{> post aPost}}
+<div>
+    <h1 class="padding-20">Dashboard of Posts</h1>
+    <div style="float: right;">
+        <a href="/dashboard/create/" class="new-post"><button id="create-post">Create New Post</button></a> 
+    </div>
+
+    {{#if posts.length}}
+    {{!-- List the users posts --}}
+    {{#each posts as |post| }}
+    <a href="/dashboard/edit/{{post.id}}"><button class="upvote-btn">edit post</button></a>
+    {{> post-info post}} 
+</div>
+
 {{/each}}
+
+{{else}}
+<div class="center-message">
+    <h5>There are no posts to display!</h5>
+</div>
+{{/if}}

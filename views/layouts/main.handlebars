@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Tech Blog</title>
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/public/css/main.css" />
   </head>
 
   <body>
@@ -28,10 +28,21 @@
       </ul>
       <h1 id="nav-header">Tech Blog</h1>
     </nav>
-    {{{body}}}
+    <main>
+      {{{body}}}
+    </main>
+    {{#if loggedIn}}
+      <footer>
+        Thanks for signing in!
+      </footer>
 
+      <script src="/js/logout.js"></script>
+
+    {{else}}
+      <footer>
+        Thanks for visiting!
+      </footer>
+      
+    {{/if}}
   </body>
-  <script src="/js/logout.js"></script>
-  <script src="/js/home.js"></script>
-
 </html>
